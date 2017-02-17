@@ -14,7 +14,6 @@ public class Initilazer {
         studentlist.add(new Student(2,"Mohan"));
         studentlist.add(new Student(3,"Brigdish"));
 
-
         return studentlist;
     }
 
@@ -23,9 +22,7 @@ public class Initilazer {
      */
     public class Initilizer {
 
-        public Initilizer(LibraryManager libraryManager) {
 
-        }
     }
 
 }

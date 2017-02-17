@@ -10,6 +10,18 @@ public class LibraryManager {
 
 
 
+    public Student registerStudent(String studentName){
+        Student student =   new Student(studentName);
+        student.setStudentId(studentlist.size());
+        addStudent( student);
+        return student;
+    }
+
+
+    void addStudent(Student student){
+        studentlist.add(student.getStudentId(),student);
+    }
+
 
 
 }

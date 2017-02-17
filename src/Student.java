@@ -12,6 +12,10 @@ public class Student {
         this.setName(name);
     }
 
+    public Student(String name ){
+        this.setName(name);
+    }
+
 
     public Integer getStudentId() {
         return studentId;

@@ -32,6 +32,13 @@ public class Client {
 
             }else if (loginOption == 0 ) {
                 // create a new user
+                System.out.println("Welcome to the Register Screen");
+                System.out.println("Enter name of Student ... ");
+                String studentName = scan.next();
+                Student student = libraryManager.registerStudent(studentName);
+                System.out.println("Student registered successfully ");
+                System.out.println(student);
+
             } else {
                 System.out.println("Invalid entry for Students Module ");
             }
