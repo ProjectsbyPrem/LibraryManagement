@@ -26,9 +26,18 @@ public class Client {
             if(loginOption == 1 ) {
                 System.out.println("Please enter your student Id ");
                 studentId = scan.nextInt();
-                // retrive student and go ahead
-                Student student = libraryManager.studentlist.get(studentId);
-                System.out.println("Student retrived is "+ student);
+                Student student =null;
+                if(studentId > libraryManager.studentlist.size()-1){
+                    System.out.println("Please enter valid student id ;-) ");
+                    studentId = scan.nextInt();
+                }
+
+                try {
+                    student = libraryManager.studentlist.get(studentId);
+                    System.out.println("Student retrived is " + student);
+                }catch (Exception e) {
+                    System.out.println("Sorry Student cannot be retrived - its invalid student id STUPID ;-)  ");
+                }
 
             }else if (loginOption == 0 ) {
                 // create a new user

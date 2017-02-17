@@ -9,10 +9,11 @@ public class Initilazer {
     public List<Student> loadStudents() {
         List<Student> studentlist = new ArrayList<Student>();
 
-        studentlist.add(new Student(0,"Naren"));
+        studentlist.add(new Student(0,"System user"));
         studentlist.add(new Student(1,"Sphoorthi"));
         studentlist.add(new Student(2,"Mohan"));
         studentlist.add(new Student(3,"Brigdish"));
+        studentlist.add(new Student(4,"Naren"));
 
         return studentlist;
     }
