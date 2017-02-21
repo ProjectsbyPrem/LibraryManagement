@@ -9,7 +9,7 @@ public class Book {
     String name, author;
     Boolean isAssigned;
 
-    public Book(int id, String name, String author, Integer category, int quantity) {
+    public Book(String name, String author, Integer category, int id) {
         this.id = id;
         this.name = name;
         this.category = category;
@@ -36,4 +36,8 @@ public class Book {
 
     }
 
+    @Override
+    public String toString() {
+        return " id: " + this.id + " Title: " + this.name + " is Assigned : " + this.isAssigned + " ";
+    }
 }

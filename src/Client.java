@@ -14,13 +14,15 @@ public class Client {
         Integer loginOption = 0;
 
         LibraryManager libraryManager = new LibraryManager();
-        Initilazer initilazer = new Initilazer();
-        List<Student> studentList=  initilazer.loadStudents();
-        libraryManager.studentlist = studentList;
-        
+        libraryManager.loadInitialData();
+
 
         while (repeatRunFlag == 1) {
             System.out.println("Welcome to Library Managment Program ");
+//            System.out.println("Here is the available books list ");
+//            libraryManager.displayBooks();
+            System.out.println("=============================");
+
             System.out.println("Do you have a student Id ? press 1 for yes and 0 to register ? ");
             loginOption = scan.nextInt();
             if(loginOption == 1 ) {
@@ -35,6 +37,29 @@ public class Client {
                 try {
                     student = libraryManager.studentlist.get(studentId);
                     System.out.println("Student retrived is " + student);
+
+
+                    System.out.println("============Books Menus to pick ==============" );
+                    System.out.println("Enter 101 for Java books ");
+                    System.out.println("Enter 102 for Java books ");
+                    System.out.println("Enter 103 for Java books ");
+                    System.out.println("============Books Menus to pick ==============");
+
+
+                    System.out.println("Please enter book Category ");
+                    Integer category = scan.nextInt();
+                    List<Book> books =  libraryManager.displayBooks(category);
+
+                    // take input for book retival
+
+
+                    // fetch the book
+
+                    // assign the book (validate its satatus)
+
+                    // acknowldge user
+
+
                 }catch (Exception e) {
                     System.out.println("Sorry Student cannot be retrived - its invalid student id STUPID ;-)  ");
                 }
