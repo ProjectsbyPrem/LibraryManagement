@@ -41,24 +41,53 @@ public class Client {
 
                     System.out.println("============Books Menus to pick ==============" );
                     System.out.println("Enter 101 for Java books ");
-                    System.out.println("Enter 102 for Java books ");
-                    System.out.println("Enter 103 for Java books ");
+                    System.out.println("Enter 102 for JavaScript books ");
+                    System.out.println("Enter 103 for go lang books ");
                     System.out.println("============Books Menus to pick ==============");
 
 
                     System.out.println("Please enter book Category ");
                     Integer category = scan.nextInt();
                     List<Book> books =  libraryManager.displayBooks(category);
+                    System.out.println("Enter the book Id");
 
-                    // take input for book retival
-
+                    // take input for book retrival
+                    Integer bookId = scan.nextInt();
+                    Book book = books.get(bookId);
 
                     // fetch the book
-
                     // assign the book (validate its satatus)
+                    if(book.isAssigned){
+                        System.out.println("sorry book is assgined, come back later");
+                    }else{
+                        student.assignBook(book);
 
-                    // acknowldge user
+                    }
 
+                    System.out.println("Do you have to submit a book ? press 1 for yes and 0 for NO ");
+                    Integer submit = scan.nextInt();
+                    if(submit==1) {
+
+                        System.out.println("Please enter book Category ");
+                        category = scan.nextInt();
+                        books = libraryManager.displayBooks(category);
+                        System.out.println("Enter the book Id");
+
+                        // take input for book retrival
+                        bookId = scan.nextInt();
+                        book = books.get(bookId);
+
+                        // fetch the book
+                        // assign the book (validate its satatus)
+                        if (!book.isAssigned) {
+                            System.out.println("sorry book is not issued");
+                        } else {
+                            student.unAssignBook(book);
+                            System.out.println("book has been un assigned " + book + " " + student);
+                        }
+                    }else{
+                        System.out.println("Thanks ");
+                    }
 
                 }catch (Exception e) {
                     System.out.println("Sorry Student cannot be retrived - its invalid student id STUPID ;-)  ");
