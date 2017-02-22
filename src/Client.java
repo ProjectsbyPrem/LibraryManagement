@@ -19,10 +19,7 @@ public class Client {
 
         while (repeatRunFlag == 1) {
             System.out.println("Welcome to Library Managment Program ");
-//            System.out.println("Here is the available books list ");
-//            libraryManager.displayBooks();
             System.out.println("=============================");
-
             System.out.println("Do you have a student Id ? press 1 for yes and 0 to register ? ");
             loginOption = scan.nextInt();
             if(loginOption == 1 ) {
@@ -38,15 +35,8 @@ public class Client {
                     student = libraryManager.studentlist.get(studentId);
                     System.out.println("Student retrived is " + student);
 
+                    Utils.printBookCatalog();
 
-                    System.out.println("============Books Menus to pick ==============" );
-                    System.out.println("Enter 101 for Java books ");
-                    System.out.println("Enter 102 for JavaScript books ");
-                    System.out.println("Enter 103 for go lang books ");
-                    System.out.println("============Books Menus to pick ==============");
-
-
-                    System.out.println("Please enter book Category ");
                     Integer category = scan.nextInt();
                     List<Book> books =  libraryManager.displayBooks(category);
                     System.out.println("Enter the book Id");
@@ -68,7 +58,8 @@ public class Client {
                     Integer submit = scan.nextInt();
                     if(submit==1) {
 
-                        System.out.println("Please enter book Category ");
+                        Utils.printBookCatalog();
+
                         category = scan.nextInt();
                         books = libraryManager.displayBooks(category);
                         System.out.println("Enter the book Id");
@@ -106,9 +97,6 @@ public class Client {
                 System.out.println("Invalid entry for Students Module ");
             }
 
-
-
-
             System.out.println("Do you want to Re-run this program - Press 1 for yes and 0 or other digits to EXIT ");
 
             try {
@@ -117,8 +105,8 @@ public class Client {
                 repeatRunFlag = 0;
             }
 
-
         }
-        System.out.println("\n $$$$$$$$$$$$$$$$$$$$  Thanks for Using our program - Prem Aseem $$$$$$$$$$$$$$$$$$$$$$ \n ");
+            Utils.printFooter();
+
     }
 }
