@@ -1,13 +1,15 @@
 /**
  * Created by asee2278 on 2/16/17.
  */
+package com.premaseem.libraryManager.domainObjects;
+
 import java.util.*;
 
 public class Book {
 
     int id, category;
     String name, author;
-    Boolean isAssigned;
+    public Boolean isAssigned;
 
     public Book(String name, String author, Integer category, int id) {
         this.id = id;

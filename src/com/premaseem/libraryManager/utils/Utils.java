@@ -1,10 +1,12 @@
 /**
  * Created by asee2278 on 2/21/17.
  */
+package com.premaseem.libraryManager.utils;
+
 public class Utils {
 
 
-    static void printBookCatalog(){
+    public static void printBookCatalog(){
 
         System.out.println("============Books Menus to pick ==============" );
         System.out.println("Enter 101 for Java books ");
@@ -15,7 +17,7 @@ public class Utils {
         System.out.println("Please enter book Category ");
     }
 
-    static void printFooter(){
+    public static void printFooter(){
         System.out.println("\n $$$$$$$$$$$$$$$$$$$$  Thanks for Using our program - Prem Aseem $$$$$$$$$$$$$$$$$$$$$$ \n ");
     }
 
